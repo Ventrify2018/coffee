@@ -16,6 +16,7 @@ Including another URLconf
 from django.urls import path, include
 from . import views
 
+app_name = 'Coffee_Webapp'
 urlpatterns = [
     path('', views.index, name='Home')
 ]
