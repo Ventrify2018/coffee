@@ -5,3 +5,7 @@ from django.shortcuts import render
 
 def index(requests):
     return render(requests, 'Coffee_Webapp/home/index.html')
+
+
+def login(requests):
+    return render(requests, 'Coffee_Webapp/login/login.html')

@@ -18,5 +18,6 @@ from . import views
 
 app_name = 'Coffee_Webapp'
 urlpatterns = [
-    path('', views.index, name='Home')
+    path('', views.index, name='Home'),
+    path('login/', views.login, name='Login'),
 ]
