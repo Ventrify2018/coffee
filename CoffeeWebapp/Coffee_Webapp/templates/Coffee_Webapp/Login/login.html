@@ -1,7 +1,7 @@
 {% extends 'Coffee_Webapp/framework/base.html' %}
 {% load static %}
 <head>
-    <title>{% block title %}Login {% endblock %}</title>
+    <title>{% block title %}Login{% endblock %}</title>
 
 </head>
 {% block content %}
@@ -12,7 +12,8 @@
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
             <div class="card card-signin" style="margin-top: 6rem">
                 <div class="card-body">
-                    <h5 class="card-title text-center">Sign In</h5>
+                    <img class="card-img-top" src="#" alt="Card image">
+                    <h5 class="card-title text-center">LOGIN</h5>
                     <form class="form-signin">
                         <div class="form-label-group">
                             <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
@@ -37,10 +38,14 @@
                             </div>
 
                         </div>
-                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Login
                         </button>
                         <hr class="my-4">
-                        {#                        Add in that forgot pass link#}
+                        <button class="btn btn-md btn-primary btn-block text-uppercase"
+                                type="submit"
+                                onclick="location.href='{% url 'Coffee_Webapp:Register' %}'"
+                        >Register
+                        </button>
                     </form>
                 </div>
             </div>
