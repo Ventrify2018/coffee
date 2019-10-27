@@ -5,10 +5,122 @@
 
 </head>
 {% block content %}
+    <script src="{% static 'js/register.js' %}"></script>
     <link rel="stylesheet" href="{% static '#' %}">
     <body>
 
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-12">
 
+                <div class="card card-outline-secondary">
+                    <div class="card-header">
+                        <h3 class="mb-0">User Information</h3>
+                    </div>
+                    <div class="card-body">
+                        <form class="form" role="form" autocomplete="off">
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">First name</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text" placeholder="Jane" required autofocus>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text" placeholder="Bishop" required autofocus>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Company</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text" placeholder="Ventrify">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="email" placeholder="email@gmail.com" required
+                                           autofocus>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Re-Enter Email</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="email" placeholder="email@email.com (again)" required
+                                           autofocus>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Time Zone</label>
+                                <div class="col-lg-9">
+                                    <select id="user_time_zone" class="form-control" size="0">
+                                        <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                                        <option value="Alaska">(GMT-09:00) Alaska</option>
+                                        <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp;
+                                            Canada)
+                                        </option>
+                                        <option value="Arizona">(GMT-07:00) Arizona</option>
+                                        <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp;
+                                            Canada)
+                                        </option>
+                                        <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00)
+                                            Central Time (US
+                                            &amp; Canada)
+                                        </option>
+                                        <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp;
+                                            Canada)
+                                        </option>
+                                        <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Username</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text" placeholder="janeuser" required autofocus>
+                                </div>
+                            </div>
+
+
+                            {#                            Can add Max leght or like text field with conditions #}
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Password</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="password" id="password_create"
+                                           required autofocus>
+
+
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Confirm</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="password" id="password_confirm"
+                                           required
+                                           autofocus>
+                                </div>
+                            </div>
+                            <input type="checkbox" onclick="myFunction()"><span>Show Password</span>
+
+                            {#                            TODO create the terms and condition either as button or modal #}
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label"></label>
+                                <div class="col-lg-9">
+                                    <input type="submit" class="btn btn-primary float-right" value="Register">
+                                    <input type="reset" class="btn btn-secondary float-right" style="margin-right: .5rem;"
+                                           value="Reset">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </body>
 
 {% endblock %}
+
+
+{# https://www.codeply.com/go/JVP2nxfv0p/bootstrap-4-forms  #}

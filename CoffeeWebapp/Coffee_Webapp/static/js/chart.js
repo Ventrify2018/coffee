@@ -1,6 +1,6 @@
 //doughnut
-var ctxD = document.getElementById("doughnutChart").getContext('2d');
-var myLineChart = new Chart(ctxD, {
+var ctx = document.getElementById("doughnutChart").getContext('2d');
+var myLineChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
         labels: ["Red", "Green", "Yellow", "Grey", "Dark Grey"],
@@ -11,6 +11,11 @@ var myLineChart = new Chart(ctxD, {
         }]
     },
     options: {
-        responsive: true
+        responsive: true,
+        title: {
+            display: true,
+            text: 'Geschlechtsverteilung Patientendaten',
+        },
     }
 });
+
