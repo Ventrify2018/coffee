@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'styles/register.css' %}">
     <body>
 
-    <div class="container py-5">
+    <div class="card py-5">
         <div class="row">
             <div class="col-md-12">
 
@@ -101,7 +101,8 @@
                                            autofocus>
                                 </div>
                             </div>
-                            <input type="checkbox" onclick="myFunction()"><span>Show Password</span>
+                            <input class="action-checkbox" type="checkbox"
+                                   onclick="myFunction()"><span>Show Password</span>
 
                             {#                            TODO create the terms and condition either as button or modal #}
                             <div class="form-group row">
