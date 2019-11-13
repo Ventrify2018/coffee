@@ -5,5 +5,6 @@
 /dataSources.local.xml
 /Coffee.iml
 dataSources.local.xml
-.idea
+.idea/libraries
 /CoffeeWebapp/.idea
+venv
