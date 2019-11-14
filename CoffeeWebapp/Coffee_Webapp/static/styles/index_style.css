@@ -23,6 +23,7 @@ a, a:hover, a:focus {
     transition: all 0.3s;
 }
 
+/* nav bar toggle btn*/
 .navbar {
     padding: 15px 10px;
     background: #fff;
@@ -71,19 +72,27 @@ a, a:hover, a:focus {
     transform: rotateY(100deg);
 }
 
+/* header stuff*/
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: #7386D5;
 }
 
+/* Hover part*/
+#sidebar .sidebar-header:hover {
+    background: firebrick;
+}
+
+/* The break line */
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    border-bottom: 1px solid orange;
 }
 
 #sidebar ul p {
     color: #fff;
     padding: 10px;
+    margin-bottom: 0px;
 }
 
 #sidebar ul li a {
@@ -92,15 +101,13 @@ a, a:hover, a:focus {
     display: block;
 }
 
-#sidebar ul li a:hover {
-    color: #7386D5;
-    background: #fff;
+
+/* Change the hover color here */
+#sidebar ul li a:hover, ul li a:hover {
+    color: #ffffff;
+    background: yellow;
 }
 
-#sidebar ul li.active > a, a[aria-expanded="true"] {
-    color: #fff;
-    background: #6d7fcc;
-}
 
 
 a[data-toggle="collapse"] {
@@ -133,15 +140,17 @@ ul.CTAs a {
     margin-bottom: 5px;
 }
 
-a.download {
-    background: #fff;
-    color: #7386D5;
-}
+/*a.stuff, a.Logout {*/
+/*    background: #fff;*/
+/*    color: #7386D5;*/
+/*}*/
 
-a.article, a.article:hover {
-    background: #6d7fcc !important;
-    color: #fff !important;
-}
+/*a.article:hover, a.article:hover {*/
+/*    background: #6d7fcc !important;*/
+/*    color: #fff !important;*/
+/*}*/
+
+
 
 
 /* ---------------------------------------------------
