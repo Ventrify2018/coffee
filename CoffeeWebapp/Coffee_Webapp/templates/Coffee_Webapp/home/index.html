@@ -80,7 +80,9 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
 
-                    <button type="button" id="sidebarCollapse" class="navbar-btn" onclick="thisfunction()">
+                    <button type="button" id="sidebarCollapse" class="navbar-btn" onclick="function toggler() {
+                      
+                    }">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -167,15 +169,8 @@
     </div>
 
     <script rel="script" src="{% static 'js/chart.js' %}"></script>
-    {# TODO make this js to external file#}
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-                $(this).toggleClass('active');
-            });
-        });
-    </script>
+    <script rel="script" src="{% static 'js/navbar.js' %}"></script>
+
     </body>
 {% endblock %}
 
