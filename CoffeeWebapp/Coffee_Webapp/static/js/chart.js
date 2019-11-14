@@ -1,6 +1,8 @@
 //
 /* chart.js chart examples */
 // chart colors
+// Responsive middle center text thanks to
+// https://stackoverflow.com/questions/20966817/how-to-add-text-inside-the-doughnut-chart-using-chart-js.
 
 Chart.pluginService.register({
     beforeDraw: function (chart) {
