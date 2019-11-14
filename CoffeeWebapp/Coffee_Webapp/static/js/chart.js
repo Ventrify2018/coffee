@@ -1,14 +1,64 @@
 //
-
 /* chart.js chart examples */
-
 // chart colors
-var colors = ['#007bff', '#28a745', '#333333', '#c3e6cb', '#dc3545', '#6c757d'];
+
+Chart.pluginService.register({
+    beforeDraw: function (chart) {
+        if (chart.config.options.elements.center) {
+            //Get ctx from string
+            let ctx = chart.chart.ctx;
+
+            //Get options from the center object in options
+            let centerConfig = chart.config.options.elements.center;
+            let fontStyle = centerConfig.fontStyle || 'Arial';
+            let txt = centerConfig.text;
+            var color = centerConfig.color || '#000';
+            var sidePadding = centerConfig.sidePadding || 20;
+            var sidePaddingCalculated = (sidePadding / 100) * (chart.innerRadius * 2)
+            //Start with a base font of 30px
+            ctx.font = "30px " + fontStyle;
+
+            //Get the width of the string and also the width of the element minus 10 to give it 5px side padding
+            var stringWidth = ctx.measureText(txt).width;
+            var elementWidth = (chart.innerRadius * 2) - sidePaddingCalculated;
+
+            // Find out how much the font can grow in width.
+            var widthRatio = elementWidth / stringWidth;
+            var newFontSize = Math.floor(30 * widthRatio);
+            var elementHeight = (chart.innerRadius * 2);
+
+            // Pick a new font size so it will not be larger than the height of label.
+            var fontSizeToUse = Math.min(newFontSize, elementHeight);
+
+            //Set font settings to draw it correctly.
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            var centerX = ((chart.chartArea.left + chart.chartArea.right) / 2);
+            var centerY = ((chart.chartArea.top + chart.chartArea.bottom) / 2);
+            ctx.font = fontSizeToUse + "px " + fontStyle;
+            ctx.fillStyle = color;
+
+            //Draw text in center
+            ctx.fillText(txt, centerX, centerY);
+        }
+    }
+});
+
+let colors = ['#007bff', '#28a745', '#333333', '#fff', '#dc3545', '#6c757d'];
 
 /* 3 donut charts */
 var donutOptions = {
     cutoutPercentage: 85,
-    legend: {position: 'bottom', padding: 5, labels: {pointStyle: 'circle', usePointStyle: true}}
+    legend: {position: 'bottom', padding: 5, labels: {pointStyle: 'circle', usePointStyle: true}},
+    elements: {
+        center: {
+            text: '100%',
+            color: '#36A2EB', //Default black
+            fontStyle: 'Helvetica', //Default Arial
+            fontWeight: "bold",
+            sidePadding: 15 //Default 20 (as a percentage)
+        }
+    }
 };
 
 // donut 1
@@ -54,10 +104,10 @@ if (chDonut2) {
 
 // donut 3
 var chDonutData3 = {
-    labels: ['Angular', 'React', 'Other'],
+    labels: ['Angular', 'React', 'Other', "other other"],
     datasets: [
         {
-            backgroundColor: colors.slice(0, 3),
+            backgroundColor: colors.slice(0, 4),
             borderWidth: 0,
             data: [21, 45, 55, 33]
         }
